@@ -5,6 +5,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import { DialogWithEditComponent } from '../dialog-with-edit/dialog-with-edit.component';
 import { DialogEditComponent } from '../dialog-edit/dialog-edit.component';
+import { DialogForDeletedAllComponent } from '../dialog-for-deleted-all/dialog-for-deleted-all.component';
 import {  MatDialog } from '@angular/material/dialog';
 
 export interface PeriodicElement {
@@ -13,7 +14,8 @@ export interface PeriodicElement {
   Phone?: number;
   Email?: string;
   Addess?: string;
-  Actions?:any
+  Actions?:any,
+  isChecked?:boolean
 }
 
 const dataSource: PeriodicElement[] = [
@@ -35,6 +37,8 @@ const dataSource: PeriodicElement[] = [
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit, AfterViewInit{
+  selectedItemsList:any = [];
+  checkedIDs:any= [];
   displayedColumns: string[] = ['select', 'position', 'name', 'Email','Phone', 'Addess','Actions'];
   // dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
@@ -58,6 +62,9 @@ export class TableComponent implements OnInit, AfterViewInit{
    addData() {
     this.dataSource.push({position:dataSource.length+1});
     this.table.renderRows();
+    let last = this.dataSource[this.dataSource.length-1];
+    this.openDialogEdit(last)
+
     dataSource.length=dataSource.length+1
   }
   toggleAllRows() {
@@ -69,14 +76,44 @@ export class TableComponent implements OnInit, AfterViewInit{
 
     this.selection.select(...this.dataSource);
   }
+  fetchCheckedIDs() {
+     
+    this.dataSource.forEach((value) => {
+      if (value.isChecked) {
+        // console.log('valuevaluevaluevalue',value.position);
+        if (!this.checkedIDs.find((id:any) => id === value.position)) {
+          this.checkedIDs.push(value.position)
+          this.selectedItemsList.push(value.name)
+          
+        }
+      }
+    });
+  }
   deleteData(){
-    this.dataSource.pop();
+    this.checkedIDs.forEach((element:any) => {
+      console.log('element' ,element);
+      
+      this.dataSource = this.dataSource.filter((u) => u.position !== element);  
+
+    });
+    // this.selectedItemsList.forEach((element:any) => {
+      
+    //    this.dataSource.forEach((u) => {
+    //     if(u.name == element){
+    //       console.log('u.name',u.name);
+          
+    //     }
+    //    });  
+
+    // });
     this.dataSource=[...this.dataSource];
   }
+  
   deleteRow(id:number){ 
       this.dataSource = this.dataSource.filter((u) => u.position !== id);  
   }
   checkboxLabel(row?: PeriodicElement): string {
+    
     if (!row) {
       return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
     }
@@ -84,6 +121,7 @@ export class TableComponent implements OnInit, AfterViewInit{
   }
 
   constructor(private _dialog: MatDialog) { }
+
   openDialog(row: PeriodicElement) {
     console.log('Row clicked', row);
     const dialog = this._dialog.open(DialogWithEditComponent, {
@@ -95,6 +133,7 @@ export class TableComponent implements OnInit, AfterViewInit{
       } 
     });
   }
+
   openDialogEdit(row: PeriodicElement) {
     console.log('Row clicked', row);
     const dialog = this._dialog.open(DialogEditComponent, {
@@ -109,7 +148,42 @@ export class TableComponent implements OnInit, AfterViewInit{
       } 
     });
   }
-  ngOnInit(): void {
+  openDialogDeleteChecked() {
+    
+    const dialog = this._dialog.open(DialogForDeletedAllComponent, {
+      width: '250px',
+      // Can be closed only by clicking the close button
+      disableClose: true,
+      
+      data: this.selectedItemsList
+    }).afterClosed()
+    .subscribe((closeDialog: Boolean) => {
+      if (closeDialog) {
+        this.checkedIDs.forEach((element:any) => {
+          console.log('element' ,element);
+          
+          this.dataSource = this.dataSource.filter((u) => u.position !== element);  
+    
+        });
+        this.selectedItemsList.length=0
+        this.checkedIDs.length=0 
+        this.dataSource=[...this.dataSource];
+
+      }else{
+        
+        this.selectedItemsList.length=0
+        this.checkedIDs.length=0
+        console.log(this.checkedIDs);
+      }
+    });
   }
+
+  ngOnInit(): void {
+    // this.fetchCheckedIDs()
+  }
+  ngDoCheck() {
+    this.fetchCheckedIDs()
+  }
+  
 
 }

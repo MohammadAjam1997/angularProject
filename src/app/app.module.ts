@@ -11,6 +11,8 @@ import { TableComponent } from './table/table.component';
 import { DialogWithEditComponent } from './dialog-with-edit/dialog-with-edit.component';
 import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
 import { TabelPaginationExampleComponent } from './tabel-pagination-example/tabel-pagination-example.component';
+import { DialogForDeletedAllComponent } from './dialog-for-deleted-all/dialog-for-deleted-all.component';
+import { FormReactiveComponent } from './form-reactive/form-reactive.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { TabelPaginationExampleComponent } from './tabel-pagination-example/tabe
     TableComponent,
     DialogWithEditComponent,
     DialogEditComponent,
-    TabelPaginationExampleComponent
+    TabelPaginationExampleComponent,
+    DialogForDeletedAllComponent,
+    FormReactiveComponent
   ],
   imports: [
     SharedModule,

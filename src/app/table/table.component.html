@@ -4,7 +4,7 @@
     <div ><button mat-raised-button (click)="addData()" class="demo-button text-white buttonAdd bg-success me-2">
       <mat-icon >add_circle</mat-icon>  Add Row Data
     </button></div>
-    <div ><button mat-raised-button (click)="deleteData()" class="demo-button  text-white buttonAdd bg-danger">
+    <div ><button mat-raised-button (click)="openDialogDeleteChecked()" class="demo-button  text-white buttonAdd bg-danger">
         
         <mat-icon>            do_not_disturb_on
         </mat-icon >Deleted
@@ -17,20 +17,19 @@
     <!-- Checkbox Column -->
     <ng-container matColumnDef="select">
       <th mat-header-cell *matHeaderCellDef>
-        <mat-checkbox (change)="$event ? toggleAllRows() : null"
-                      [checked]="selection.hasValue() && isAllSelected()"
-                      [indeterminate]="selection.hasValue() && !isAllSelected()"
-                      [aria-label]="checkboxLabel()">
-        </mat-checkbox>
-      </th>
-      <td mat-cell *matCellDef="let row">
-        <mat-checkbox (click)="$event.stopPropagation()"
+      #
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+      [(ngModel)]="row.isChecked"
                       (change)="$event ? selection.toggle(row) : null"
                       [checked]="selection.isSelected(row)"
                       [aria-label]="checkboxLabel(row)">
         </mat-checkbox>
+        
       </td>
     </ng-container>
+    
   
     <!-- Position Column -->
     <ng-container matColumnDef="position">
