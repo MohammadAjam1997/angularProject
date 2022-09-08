@@ -331,11 +331,10 @@
       width="29" 
       height="29"
       alt="Angular Logo"
-      src="../assets/3909383.png"
+      :src="../assets/{{ 'HOME.image' | translate }}"
     /> </button>
-<mat-menu #menu1="matMenu">
-  <button mat-menu-item>Arabic</button>
-  <button mat-menu-item>English</button>
+<mat-menu  #menu1="matMenu">
+  <button mat-menu-item (click)="translate.use(lang)"  *ngFor="let lang of translate.getLangs()" [value]="lang" >{{lang}}</button>
   
 </mat-menu>
 <div class="ps-3 displayComponent">
@@ -353,11 +352,12 @@
   <div class="d-flex pe-2">
 <p>& Orders</p></div>
 </div>
-<mat-icon class="icon-display displayComponent"> shopping_cart</mat-icon><span class="h6 pt-4 ps-1 pe-2 displayComponent">Cart</span>
-</div>
+<button mat-button mat-icon-button (click)="AddTOCart()">
+<mat-icon class="icon-display displayComponent" :matBadge="{{numberOfitems}}" matBadgeSize="small" matBadgeColor="warn"> shopping_cart</mat-icon><span class="h6 pt-4 ps-1 pe-2 displayComponent">Cart</span>
+</button></div>
 <div class="mt-5 pt-2 d-flex ps-2" style="background-color:#37475A ;">
   <button (click)="drawer.toggle()" mat-icon-button class="text-white "><mat-icon class="text-white">view_headline</mat-icon>
-  <span  class="">All</span></button>
+  <span  class="">{{ 'HOME.TITLE' | translate }}</span></button>
   
   <button mat-button class="text-white  displayComponent ">
   <span>Today's Deals</span></button>
@@ -402,7 +402,6 @@
 </mat-drawer-container>
 
 <app-tabs></app-tabs>
-
 
 
 <router-outlet></router-outlet>

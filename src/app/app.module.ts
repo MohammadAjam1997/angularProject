@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HttpClient  } from '@angular/common/http';
 import { SharedModule } from "./shared/shared.module";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,13 @@ import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
 import { TabelPaginationExampleComponent } from './tabel-pagination-example/tabel-pagination-example.component';
 import { DialogForDeletedAllComponent } from './dialog-for-deleted-all/dialog-for-deleted-all.component';
 import { FormReactiveComponent } from './form-reactive/form-reactive.component';
+// import { TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -28,6 +35,14 @@ import { FormReactiveComponent } from './form-reactive/form-reactive.component';
   ],
   imports: [
     SharedModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+    })
+,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
