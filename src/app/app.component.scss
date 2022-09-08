@@ -1,0 +1,39 @@
+@media only screen and (min-width:576px) {
+.rowss{
+    width: 59% !important;
+   
+}
+.searchComponetOnSmall{
+    display: none;
+    }
+.icon-display {
+    transform: scale(1.5);
+ }
+}
+ @media only screen and (max-width: 576px) {
+    body {
+      background-color: red;
+    }
+    .rowss{
+     display: none;       
+    }
+    .displayComponent{
+     display: none;       
+    }
+    .searchComponetOnSmall{
+    display: block;
+    }
+  }
+  .example-container {
+    width:45%;
+    height: 300px;
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+ 

@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { MatSliderModule } from '@angular/material/slider';
@@ -22,10 +25,10 @@ import {MatButtonModule} from '@angular/material/button';
   declarations: [],
   imports: [
     CommonModule,MatDialogModule,MatFormFieldModule,MatTabsModule,MatButtonModule,FormsModule,MatPaginatorModule,NgxPaginationModule,ReactiveFormsModule,
-    SharedRoutingModule,MatSliderModule,MatGridListModule,MatCardModule,MatInputModule,MatCheckboxModule,MatTableModule,MatIconModule,
+    MatSidenavModule,SharedRoutingModule,MatBadgeModule,MatSliderModule,MatGridListModule,MatCardModule,MatInputModule,MatCheckboxModule,MatTableModule,MatIconModule,MatMenuModule
   ],
   exports:[MatDialogModule,MatFormFieldModule,MatTabsModule,MatButtonModule,FormsModule,MatPaginatorModule,NgxPaginationModule,ReactiveFormsModule,
-    MatSliderModule,MatGridListModule,MatCardModule,MatInputModule,MatCheckboxModule,MatTableModule,MatIconModule,
+    MatSidenavModule,MatSliderModule,MatGridListModule,MatBadgeModule,MatCardModule,MatInputModule,MatCheckboxModule,MatTableModule,MatIconModule,MatMenuModule
   ]
 })
 export class SharedModule { }
