@@ -1,9 +1,12 @@
 {
     "HOME": {
       "TITLE": "All",
-      "image":"3909383.png"
-      
-
+      "image":"3909383.png",
+      "Today":"Today's Deals",
+      "Customer":"Customer Services",
+      "Registry":"Registry",
+      "Gift":"Gift Cards",
+      "Sell":"Sell"
     }
   }
   
