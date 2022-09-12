@@ -1,5 +1,6 @@
+// @import url('./app.component.ts');
 @media only screen and (min-width:576px) {
-.rowss{
+.sizeOFInput{
     width: 59% !important;
    
 }
@@ -11,10 +12,8 @@
  }
 }
  @media only screen and (max-width: 576px) {
-    body {
-      background-color: red;
-    }
-    .rowss{
+ 
+    .sizeOFInput{
      display: none;       
     }
     .displayComponent{
@@ -24,16 +23,39 @@
     display: block;
     }
   }
-  .example-container {
-    width:45%;
-    height: 300px;
+  .directionRTL{
+    direction: ltr;
   }
-  
-  .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+  $sample: 20px;
+.paddingForRerturn{
+  padding-right: $sample;
+}
+
+  :host(.active) {
+    .paddingForRerturn{
+      padding-left: $sample;
+     padding-bottom: 10px;
+     padding-right: 0px;
+    }
+    .textDetails span{
+      font-family: inherit;
+      font-size: 18px;
+    }
+    .welcomeText{
+      padding-right: 25px;
+    }
+    .BorderRadiusInArabicMood{
+      border-radius:10px 0px 0px 10px !important;
+    
+    }
+    .BorderRadiusInArabicMoodForAll{
+      border-radius:0px 5px 5px 0px !important;
+
+    }
+    .directionRTL{
+      direction: rtl;
+      // margin: $sample;
+    }
   }
+
   
- 

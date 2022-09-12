@@ -298,7 +298,7 @@
 </style>
 
 <!-- Toolbar -->
-<div class="toolbar" style="background-color:#232F3E ;" role="banner">
+<div class="toolbar directionRTL" style="background-color:#232F3E ;" role="banner">
   <img
     width="140" 
     height="60"
@@ -307,18 +307,18 @@
   />
   
   <div>
-    <p ><small class="text-secondary ps-4">Delivery</small></p>
+    <p ><small class="text-secondary ps-4 ">{{'HOME.Delivery'| translate}}</small></p>
     <div class="d-flex pe-2">
-  <mat-icon class=""> location_on</mat-icon><p>Syria</p></div>
+  <mat-icon class=""> location_on</mat-icon><p>{{'HOME.Country'| translate}}</p></div>
 </div>
-  <div class="input-group rowss ps-3">
-    <button mat-button [matMenuTriggerFor]="menu" class="btn btn-outline-warning dropdown-toggle text-white bg-secondary" type="button"  aria-expanded="false">All</button>
+  <div class="input-group sizeOFInput ps-3">
+    <button mat-button [matMenuTriggerFor]="menu" class="btn btn-outline-warning dropdown-toggle text-white bg-secondary BorderRadiusInArabicMoodForAll" type="button"  aria-expanded="false">{{ 'HOME.TITLE' | translate }}</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>
     </mat-menu>
     <input type="text" class="form-control border border-warning" aria-label="Text input with dropdown button">
-    <button class="btn btn-outline-warning d-flex justify-align-center" style="background-color:#F0BF4c ;" type="button" id="inputGroupFileAddon04"><mat-icon class="text-white" >search</mat-icon></button>
+    <button class="btn btn-outline-warning d-flex justify-align-center BorderRadiusInArabicMood" style="background-color:#F0BF4c ;" type="button" id="inputGroupFileAddon04"><mat-icon class="text-white" >search</mat-icon></button>
 
   </div>
   <div class="searchComponetOnSmall">
@@ -338,28 +338,29 @@
   
 </mat-menu>
 <div class="ps-3 displayComponent">
-  <p ><small class="text-white ps-3">Delivery</small></p>
+  <p ><small class="text-white ps-3 welcomeText">{{ 'HOME.Welcome' | translate }}</small></p>
   <div class="d-flex pe-2">
-    <button class="dropdown-toggle" mat-button [matMenuTriggerFor]="menu122" > Account & Lists</button>
+    <button class="dropdown-toggle " mat-button [matMenuTriggerFor]="menu122" >{{ 'HOME.Account&Lists' | translate }}</button>
 <mat-menu #menu122="matMenu">
   <button mat-menu-item>Item 1</button>
   <button mat-menu-item>Item 2</button>
   
 </mat-menu></div>
 </div>
- <div class="pe-3 displayComponent">
-  <p ><small class="text-white ">Return</small></p>
-  <div class="d-flex pe-2">
-<p>& Orders</p></div>
+ <div class=" displayComponent paddingForRerturn ">
+  <p ><small class="text-white ">{{ 'HOME.Return' | translate }}</small></p>
+  <div class="d-flex pe-2 ">
+<p>{{ 'HOME.Orders' | translate }}</p></div>
 </div>
 <button mat-button mat-icon-button (click)="AddTOCart()">
-<mat-icon class="icon-display displayComponent" :matBadge="{{numberOfitems}}" matBadgeSize="small" matBadgeColor="warn"> shopping_cart</mat-icon><span class="h6 pt-4 ps-1 pe-2 displayComponent">Cart</span>
+  
+<mat-icon class="icon-display displayComponent " :matBadge="{{numberOfitems}}" matBadgeSize="small" matBadgeColor="warn"> shopping_cart</mat-icon><span class="h6 pt-4 ps-1 pe-2 displayComponent">{{'HOME.Cart'|translate}}</span>
 </button></div>
-<div class="mt-5 pt-2 d-flex ps-2" style="background-color:#37475A ;">
-  <button (click)="drawer.toggle()" mat-icon-button class="text-white "><mat-icon class="text-white">view_headline</mat-icon>
+<div class="mt-5 pt-2 d-flex ps-2 directionRTL textDetails "    style="background-color:#37475A ;">
+  <button (click)="drawer.toggle()" mat-icon-button class="text-white  "><mat-icon class="text-white">view_headline</mat-icon>
   <span  class="">{{ 'HOME.TITLE' | translate }}</span></button>
   
-  <button mat-button class="text-white  displayComponent ">
+  <button mat-button class="   displayComponent text-white">
   <span>{{ 'HOME.Today' | translate }}</span></button>
   
   <button mat-button class="text-white  displayComponent">
@@ -380,16 +381,16 @@
 <mat-drawer-container class="example-container searchComponetOnSmall" autosize>
   <mat-drawer #drawer style="background-color:#37475A ;"  class="" mode="side">
     <button mat-button class="text-white ">
-      <span>Today's Deals</span></button>
+      <span>{{ 'HOME.Today' | translate }}</span></button>
       
       <button mat-button class="text-white ">
-      <span>Customer Service</span></button>
+      <span>{{ 'HOME.Customer' | translate }}</span></button>
       
       <button mat-button class="text-white ">
-      <span>Registry</span></button>
+      <span>{{ 'HOME.Registry' | translate }}</span></button>
       
       <button mat-button class="text-white ">
-      <span>Gift Cards</span></button>
+      <span>{{ 'HOME.Gift' | translate }}</span></button>
       
     <br>
       <button  mat-button class="text-white ">

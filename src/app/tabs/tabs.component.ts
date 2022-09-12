@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostBinding } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-tabs',
@@ -6,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tabs.component.scss']
 })
 export class TabsComponent implements OnInit {
+  @HostBinding('class') css?: string = undefined;
+  directionRTL: boolean = false
 
-  constructor() { }
-
+  constructor(public translate: TranslateService) {
+   
+  }
   ngOnInit(): void {
   }
+  ngDoCheck() {
+    
+   
+    console.log('translate', this.translate.currentLang);
+    if (this.translate.currentLang == 'ar') {
+      this.css = 'active';
 
+      this.directionRTL = true
+    } else {
+      this.directionRTL = false
+      this.css = undefined;
+
+    }
+  }
 }

@@ -13,9 +13,11 @@ import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
 import { TabelPaginationExampleComponent } from './tabel-pagination-example/tabel-pagination-example.component';
 import { DialogForDeletedAllComponent } from './dialog-for-deleted-all/dialog-for-deleted-all.component';
 import { FormReactiveComponent } from './form-reactive/form-reactive.component';
-// import { TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { NgxImgZoomModule } from "ngx-img-zoom";
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -34,7 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormReactiveComponent
   ],
   imports: [
-    SharedModule,
+    SharedModule,NgxImageZoomModule,NgxImgZoomModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
