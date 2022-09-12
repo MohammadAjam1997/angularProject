@@ -378,29 +378,32 @@
   
 </div>
 <div>
-<mat-drawer-container class="example-container searchComponetOnSmall" autosize>
-  <mat-drawer #drawer style="background-color:#37475A ;"  class="" mode="side">
+  <mat-drawer-container class="example-container searchComponetOnSmall" autosize>
+    <mat-drawer #drawer style="background-color:#37475A ;" class="example-sidenav" mode="side">
     <button mat-button class="text-white ">
       <span>{{ 'HOME.Today' | translate }}</span></button>
-      
+      <br>
+
       <button mat-button class="text-white ">
       <span>{{ 'HOME.Customer' | translate }}</span></button>
-      
+      <br>
+
       <button mat-button class="text-white ">
       <span>{{ 'HOME.Registry' | translate }}</span></button>
-      
+      <br>
+
       <button mat-button class="text-white ">
       <span>{{ 'HOME.Gift' | translate }}</span></button>
       
     <br>
       <button  mat-button class="text-white ">
-      <span>Sell</span></button>
-   
-  </mat-drawer>
+      <span>{{ 'HOME.Sell' | translate }}</span></button>
+    </mat-drawer>
+  
+    
+    <app-tabs></app-tabs>
+  </mat-drawer-container>
 
- 
-
-</mat-drawer-container>
 
 <app-tabs></app-tabs>
 
