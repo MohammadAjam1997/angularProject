@@ -330,12 +330,17 @@
 
   <button    mat-button [matMenuTriggerFor]="menu1" mat-icon-button> <img
       width="29" 
-      height="29"
+      height="20"
       alt="Angular Logo"
-      :src="{{translate.currentLang!=='ar'?flagEnglish:flagArabic}}"
+      :src="{{flagA}}"
     /> </button>
 <mat-menu  #menu1="matMenu">
-  <button mat-menu-item (click)="translate.use(lang)"  *ngFor="let lang of translate.getLangs()" [value]="lang" >{{lang}}</button>
+  <button mat-menu-item (click)="setImageFlag(lang.filePreviewPath,lang.code)"  *ngFor="let lang of ArrayOfLanguage" [value]="lang.code" >{{lang.name}} <img
+    width="29" 
+    height="29"
+    alt="Angular Logo"
+    :src="{{lang.filePreviewPath}}"
+  /></button>
   
 </mat-menu>
 <div class="ps-3 displayComponent">
@@ -361,7 +366,7 @@
   <button (click)="drawer.toggle()" mat-icon-button class="text-white  "><mat-icon class="text-white">view_headline</mat-icon>
   <span  class="">{{ 'HOME.TITLE' | translate }}</span></button>
   
-  <button mat-button class="   displayComponent text-white">
+  <button  mat-button class="   displayComponent text-white">
   <span>{{ 'HOME.Today' | translate }}</span></button>
   
   <button mat-button class="text-white  displayComponent">

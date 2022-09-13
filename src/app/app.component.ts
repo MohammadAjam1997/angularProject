@@ -13,8 +13,8 @@ export class AppComponent {
   welcome!: string;
   usernameLabel!: string;
   passwordLabel!: string;
-  flagArabic!: string;
-  flagEnglish!: string;
+  flagA!: string;
+ 
   directionRTL: boolean = false
   title = 'Currency';
   showFiller = false;
@@ -28,24 +28,23 @@ export class AppComponent {
   constructor(public translate: TranslateService, public configSer: ConfigerService) {
     this.configSer.getLanguageApiformLanguage().subscribe((res) => {
       
-      console.log(res);
-      this.ArrayOfLanguage = res.map((el: any) => {
-        if(el.code=='ar'){
-          this.flagArabic=el.filePreviewPath
-        }
-        if(el.code=='en'){
-          this.flagEnglish=el.filePreviewPath
-        }
-        return el.code
+      this.ArrayOfLanguage = res
+      this.flagA=this.ArrayOfLanguage[0].filePreviewPath
+     let langsOFadded= res.map((el:any)=>{
+        el.code
       })
-      translate.addLangs(this.ArrayOfLanguage);
-      translate.setDefaultLang(this.ArrayOfLanguage[0]);
+      translate.addLangs(langsOFadded);
+      translate.setDefaultLang(langsOFadded[0]);
       const browserLang: any = translate.getBrowserLang();
-      translate.use(browserLang.match(/en|ar/) ? browserLang : this.ArrayOfLanguage);
+      translate.use(browserLang.match(/en|ar/) ? browserLang : langsOFadded);
     });
 
 
  
+  }
+  setImageFlag(flag:any,lang:any){
+    this.flagA=flag
+    this.translate.use(lang)
   }
   ngDoCheck() {
 

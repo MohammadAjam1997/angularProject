@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule,HttpClient  } from '@angular/common/http';
+import { HttpClientModule,HttpClient, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { SharedModule } from "./shared/shared.module";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,7 @@ import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { NgxImgZoomModule } from "ngx-img-zoom";
 
 import { getBaseUrl } from "../services/config";
+import { HeadersInterceptor } from './headers.interceptor';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -50,7 +51,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [{ provide: "BASE_URL", useFactory: getBaseUrl }],
+  providers: [{ provide: "BASE_URL", useFactory: getBaseUrl },{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HeadersInterceptor,
+    multi: true
+}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
