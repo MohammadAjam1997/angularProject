@@ -8,12 +8,10 @@ import { NgxImgZoomService } from "ngx-img-zoom";
   styleUrls: ['./currency.component.scss']
 })
 export class CurrencyComponent implements OnInit {
-  name = 'Angular';
 
-  myThumbnail="https://wittlock.github.io/ngx-image-zoom/assets/thumb.jpg";
-  myFullresImage="https://wittlock.github.io/ngx-image-zoom/assets/fullres.jpg";
+ 
   // title!:string;
-  title = "CodeSandbox";
+  title = "Code";
   public imagePath:any;
   imgURL: any;
   public message!: string;
@@ -64,7 +62,6 @@ export class CurrencyComponent implements OnInit {
   ngOnInit(): void {
     this.configSer.getConfigApiformCurrency().subscribe(
       (res:any) =>{
-        console.log('res',res["Realtime Currency Exchange Rate"]);
         this.AskPrice=res["Realtime Currency Exchange Rate"]["9. Ask Price"]
         this.BidPrice=res["Realtime Currency Exchange Rate"]["8. Bid Price"]
         this.Country=res["Realtime Currency Exchange Rate"]["1. From_Currency Code"]
@@ -73,7 +70,6 @@ export class CurrencyComponent implements OnInit {
     )
     this.configSer.getAllData().subscribe(
       (res:any) =>{
-        console.log(res);
         this.title=res
         this.Country=res.Country
         

@@ -15,7 +15,6 @@ export class DialogWithEditComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log('Dialog got', this.data);
   }
 
   closeDialog() {

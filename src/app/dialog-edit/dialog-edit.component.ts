@@ -13,7 +13,6 @@ export class DialogEditComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) { }
   ngOnInit() {
-    console.log('Dialog', this.data);
   }
 
   closeDialog() {

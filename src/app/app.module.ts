@@ -18,7 +18,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { NgxImgZoomModule } from "ngx-img-zoom";
 
-
+import { getBaseUrl } from "../services/config";
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -50,7 +50,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: "BASE_URL", useFactory: getBaseUrl }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

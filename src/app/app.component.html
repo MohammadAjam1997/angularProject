@@ -327,11 +327,12 @@
     <input  mat-menu-item type="text">  
   </mat-menu>
 </div>
-  <button  mat-button [matMenuTriggerFor]="menu1" mat-icon-button> <img
+
+  <button    mat-button [matMenuTriggerFor]="menu1" mat-icon-button> <img
       width="29" 
       height="29"
       alt="Angular Logo"
-      :src="../assets/{{ 'HOME.image' | translate }}"
+      :src="{{translate.currentLang!=='ar'?flagEnglish:flagArabic}}"
     /> </button>
 <mat-menu  #menu1="matMenu">
   <button mat-menu-item (click)="translate.use(lang)"  *ngFor="let lang of translate.getLangs()" [value]="lang" >{{lang}}</button>

@@ -14,7 +14,6 @@ export class DialogForDeletedAllComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log('Dialog got', this.data);
   }
 
   closeDialog() {

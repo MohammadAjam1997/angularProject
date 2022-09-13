@@ -14,7 +14,6 @@ export class FormReactiveComponent implements OnInit {
   ngOnInit(): void {
   }
   ngDoCheck(){
-console.log('name',this.name.value);
 
 }
 }

@@ -18,7 +18,6 @@ export class TabsComponent implements OnInit {
   ngDoCheck() {
     
    
-    console.log('translate', this.translate.currentLang);
     if (this.translate.currentLang == 'ar') {
       this.css = 'active';
 
