@@ -1,4 +1,4 @@
-import { ConfigerService } from './configer.service'
+import { ConfigerService } from './shared/services/configer.service'
 import { Component, HostBinding, Inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -69,12 +69,6 @@ export class AppComponent {
       return el.name
     })
   }
-  ngOnInit(): void {
-
-   
-
-
-
-
-  }
+  ngOnInit(): void {}
+  
 }

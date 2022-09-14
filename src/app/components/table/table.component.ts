@@ -2,9 +2,9 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
-import { DialogWithEditComponent } from '../dialog-with-edit/dialog-with-edit.component';
-import { DialogEditComponent } from '../dialog-edit/dialog-edit.component';
-import { DialogForDeletedAllComponent } from '../dialog-for-deleted-all/dialog-for-deleted-all.component';
+import { DialogWithEditComponent } from './dialog-with-edit/dialog-with-edit.component';
+import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
+import { DialogForDeletedAllComponent } from './dialog-for-deleted-all/dialog-for-deleted-all.component';
 import { MatDialog } from '@angular/material/dialog';
 
 export interface PeriodicElement {

@@ -16,6 +16,9 @@ export class ConfigerService {
   configUrl = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=JPY&apikey=demo';
 
 
+  getcurrencyWithID(id:any) {
+    return this.http.get<any>(`${this.baseUrl}/api/Currency/GetAllCurrency/:id?id=${id}`);
+  }
   getAllData() {
     return this.http.get<any>(this.url);
   }

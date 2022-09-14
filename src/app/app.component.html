@@ -303,7 +303,7 @@
     width="140" 
     height="60"
     alt="Angular Logo"
-    src="../assets/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png"
+    src="../assets/images/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png"
   />
   
   <div>
@@ -337,7 +337,7 @@
 <mat-menu  #menu1="matMenu">
   <button mat-menu-item (click)="setImageFlag(lang.filePreviewPath,lang.code)"  *ngFor="let lang of ArrayOfLanguage" [value]="lang.code" >{{lang.name}} <img
     width="29" 
-    height="29"
+    height="20"
     alt="Angular Logo"
     :src="{{lang.filePreviewPath}}"
   /></button>
@@ -363,16 +363,16 @@
 <mat-icon class="icon-display displayComponent " :matBadge="{{numberOfitems}}" matBadgeSize="small" matBadgeColor="warn"> shopping_cart</mat-icon><span class="h6 pt-4 ps-1 pe-2 displayComponent">{{'HOME.Cart'|translate}}</span>
 </button></div>
 <div class="mt-5 pt-2 d-flex ps-2 directionRTL textDetails "    style="background-color:#37475A ;">
-  <button (click)="drawer.toggle()" mat-icon-button class="text-white  "><mat-icon class="text-white">view_headline</mat-icon>
+  <button (click)="drawer.toggle()" mat-icon-button class="text-white  " ><mat-icon class="text-white">view_headline</mat-icon>
   <span  class="">{{ 'HOME.TITLE' | translate }}</span></button>
   
-  <button  mat-button class="   displayComponent text-white">
+  <button routerLink="/currency"  mat-button class="   displayComponent text-white">
   <span>{{ 'HOME.Today' | translate }}</span></button>
   
-  <button mat-button class="text-white  displayComponent">
+  <button routerLink="/table" mat-button class="text-white  displayComponent">
   <span>{{ 'HOME.Customer' | translate }}</span></button>
   
-  <button mat-button class="text-white displayComponent">
+  <button routerLink="/tablePag" mat-button class="text-white displayComponent">
   <span>{{ 'HOME.Registry' | translate }}</span></button>
   
   <button mat-button class="text-white displayComponent">
@@ -384,10 +384,11 @@
   
 </div>
 <div>
-  <mat-drawer-container class="example-container searchComponetOnSmall" autosize>
-    <mat-drawer #drawer style="background-color:#37475A ;" class="example-sidenav" mode="side">
+  <mat-drawer #drawer style="background-color:#37475A ; " class="example-sidenav searchComponetOnSmall"  >
     <button mat-button class="text-white ">
       <span>{{ 'HOME.Today' | translate }}</span></button>
+    <button (click)="drawer.toggle()" mat-icon-button class="text-white ">
+      <mat-icon>close</mat-icon></button>
       <br>
 
       <button mat-button class="text-white ">
@@ -405,13 +406,5 @@
       <button  mat-button class="text-white ">
       <span>{{ 'HOME.Sell' | translate }}</span></button>
     </mat-drawer>
-  
-    
-    <app-tabs></app-tabs>
-  </mat-drawer-container>
-
-
-  <app-tabs class="displayComponent"></app-tabs>
-
 
 <router-outlet></router-outlet>

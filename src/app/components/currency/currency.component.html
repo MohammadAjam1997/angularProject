@@ -1,5 +1,7 @@
+<button type="button" class="btn btn-outline-secondary mr-2" (click)="decrement()">Less</button>
+        <button type="button" class="btn btn-outline-primary" (click)="increment()">More</button>
 <div class="backgroundImage text-white " >
-    <mat-card-title class="d-flex justify-content-center pt-3">Currency Converter</mat-card-title>
+    <mat-card-title class="d-flex justify-content-center pt-3">Currency Converter{{ currencyes$ | async}}</mat-card-title>
 <div class="d-flex pt-4 justify-content-around">
     <div class="pt-4">{{Country}}</div>
     <div>
