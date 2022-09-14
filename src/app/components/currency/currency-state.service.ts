@@ -17,6 +17,7 @@ const initialState: CurrencyState = {
 export class CurrencyStateService extends StateService<CurrencyState>{
 
   $count: Observable<number> = this.select(state => state.count);
+  $count2: Observable<number> = this.select(state => state.count+12);
 
   constructor() {
     super(initialState)

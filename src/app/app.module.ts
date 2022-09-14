@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabsComponent } from './components/tabs/tabs.component';
-import { TabelPaginationExampleComponent } from './components/tabel-pagination-example/tabel-pagination-example.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
@@ -27,7 +26,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     TabsComponent,
     DialogWithEditComponent,
     DialogEditComponent,
-    TabelPaginationExampleComponent,
     DialogForDeletedAllComponent,
   ],
   imports: [

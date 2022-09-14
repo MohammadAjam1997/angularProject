@@ -12,6 +12,7 @@ import { ConfigerService } from 'src/app/shared/services/configer.service';
 })
 export class CurrencyComponent implements OnInit {
   currencyes$: Observable<number> = this.currency.$count;
+  currencye$: Observable<number> = this.currency.$count2;
 
 
   // title!:string;
