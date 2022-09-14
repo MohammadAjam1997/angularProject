@@ -4,7 +4,7 @@
     width: 59% !important;
    
 }
-.searchComponetOnSmall{
+.disableComponentOnSmall{
     display: none;
     }
 .icon-display {
@@ -16,10 +16,10 @@
     .sizeOFInput{
      display: none;       
     }
-    .displayComponent{
+    .disableComponent{
      display: none;       
     }
-    .searchComponetOnSmall{
+    .disableComponentOnSmall{
     display: block;
     }
   }

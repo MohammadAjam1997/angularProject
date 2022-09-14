@@ -321,7 +321,7 @@
     <button class="btn btn-outline-warning d-flex justify-align-center BorderRadiusInArabicMood" style="background-color:#F0BF4c ;" type="button" id="inputGroupFileAddon04"><mat-icon class="text-white" >search</mat-icon></button>
 
   </div>
-  <div class="searchComponetOnSmall">
+  <div class="disableComponentOnSmall">
   <button [matMenuTriggerFor]="menuInput"  class="btn btn-outline-warning ms-2 d-flex justify-align-center " style="background-color:#F0BF4c ;" type="button" id="inputGroupFileAddon04"><mat-icon class="text-white" >search</mat-icon></button>
   <mat-menu class="pe-5" #menuInput="matMenu" xPosition="before">
     <input  mat-menu-item type="text">  
@@ -343,7 +343,7 @@
   /></button>
   
 </mat-menu>
-<div class="ps-3 displayComponent">
+<div class="ps-3 disableComponent">
   <p ><small class="text-white ps-3 welcomeText">{{ 'HOME.Welcome' | translate }}</small></p>
   <div class="d-flex pe-2">
     <button class="dropdown-toggle " mat-button [matMenuTriggerFor]="menu122" >{{ 'HOME.Account&Lists' | translate }}</button>
@@ -353,40 +353,42 @@
   
 </mat-menu></div>
 </div>
- <div class=" displayComponent paddingForRerturn ">
+ <div class=" disableComponent paddingForRerturn ">
   <p ><small class="text-white ">{{ 'HOME.Return' | translate }}</small></p>
   <div class="d-flex pe-2 ">
 <p>{{ 'HOME.Orders' | translate }}</p></div>
 </div>
 <button mat-button mat-icon-button (click)="AddTOCart()">
   
-<mat-icon class="icon-display displayComponent " :matBadge="{{numberOfitems}}" matBadgeSize="small" matBadgeColor="warn"> shopping_cart</mat-icon><span class="h6 pt-4 ps-1 pe-2 displayComponent">{{'HOME.Cart'|translate}}</span>
+<mat-icon class="icon-display disableComponent " :matBadge="{{numberOfitems}}" matBadgeSize="small" matBadgeColor="warn"> shopping_cart</mat-icon><span class="h6 pt-4 ps-1 pe-2 disableComponent">{{'HOME.Cart'|translate}}</span>
 </button></div>
 <div class="mt-5 pt-2 d-flex ps-2 directionRTL textDetails "    style="background-color:#37475A ;">
-  <button (click)="drawer.toggle()" mat-icon-button class="text-white  " ><mat-icon class="text-white">view_headline</mat-icon>
+  <button  mat-icon-button class="text-white disableComponent " ><mat-icon class="text-white">view_headline</mat-icon>
+  <span  class="">{{ 'HOME.TITLE' | translate }}</span></button>
+  <button (click)="drawer.toggle()" mat-icon-button class="text-white disableComponentOnSmall " ><mat-icon class="text-white">view_headline</mat-icon>
   <span  class="">{{ 'HOME.TITLE' | translate }}</span></button>
   
-  <button routerLink="/currency"  mat-button class="   displayComponent text-white">
+  <button routerLink="/currency"  mat-button class="   disableComponent text-white">
   <span>{{ 'HOME.Today' | translate }}</span></button>
   
-  <button routerLink="/table" mat-button class="text-white  displayComponent">
+  <button routerLink="/table" mat-button class="text-white  disableComponent">
   <span>{{ 'HOME.Customer' | translate }}</span></button>
   
-  <button routerLink="/tablePag" mat-button class="text-white displayComponent">
+  <button routerLink="/tablePag" mat-button class="text-white disableComponent">
   <span>{{ 'HOME.Registry' | translate }}</span></button>
   
-  <button mat-button class="text-white displayComponent">
+  <button mat-button class="text-white disableComponent">
   <span>{{ 'HOME.Gift' | translate }}</span></button>
   
 
-  <button  mat-button class="text-white displayComponent">
+  <button  mat-button class="text-white disableComponent">
   <span>{{ 'HOME.Sell' | translate }}</span></button>
   
 </div>
 <div>
   <mat-drawer-container class="example-container" autosize>
 
-  <mat-drawer #drawer style="background-color:#37475A ; " class="example-sidenav searchComponetOnSmall"  >
+  <mat-drawer #drawer style="background-color:#37475A ; " class="example-sidenav disableComponentOnSmall"  >
     <button mat-button class="text-white ">
       <span>{{ 'HOME.Today' | translate }}</span></button>
     <button (click)="drawer.toggle()" mat-icon-button class="text-white ">
