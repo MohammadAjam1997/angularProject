@@ -23,12 +23,13 @@ export class CurrencyComponent implements OnInit {
   enableZoom: any = true;
   previewImageSrc: any;
   zoomImageSrc: any;
-  Country = null;
+  Country!: null;
   Currency = null;
   toCountery = null
   AskPrice = 0
+  baseRate = 0
   BidPrice = 0
-   
+
   constructor(public configSer: ConfigerService, private ngxImgZoom: NgxImgZoomService, private currency: CurrencyStateService) {
     this.ngxImgZoom.setZoomBreakPoints([
       { w: 100, h: 100 },
@@ -58,47 +59,44 @@ export class CurrencyComponent implements OnInit {
     this.imagePath = files;
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
-      //this.imgURL = reader.result;
       this.previewImageSrc = reader.result;
       this.zoomImageSrc = reader.result;
     };
   }
   changeUSDtoEUR(e: any) {
+    this.AskPrice = (e.target.value) * this.baseRate;
 
-    this.AskPrice = (e.target.value) * this.AskPrice;
   }
   changeEURtoUSD(e: any) {
 
-    this.BidPrice = (e.target.value) / this.AskPrice;
+    this.BidPrice = (e.target.value) / this.baseRate;
   }
   ngOnInit(): void {
-    this.configSer.getConfigApiformCurrency().subscribe(
-      (res: any) => {
-        this.AskPrice = res["Realtime Currency Exchange Rate"]["9. Ask Price"]
-        this.BidPrice = res["Realtime Currency Exchange Rate"]["8. Bid Price"]
-        this.Country = res["Realtime Currency Exchange Rate"]["1. From_Currency Code"]
-        this.toCountery = res["Realtime Currency Exchange Rate"]["3. To_Currency Code"]
-      }
-    )
-    this.configSer.getAllData().subscribe(
-      (res: any) => {
-        this.title = res
-        this.Country = res.Country
 
-      }
-    )
     this.configSer.getcurrencyWithID(3).subscribe(
       (res: any) => {
-        console.log('resssssssss', res);
         console.log(res.map((el: any) => {
-          console.log(el.code);
+          if (el.code == 'USD') {
+            this.Country = el.code
+            this.BidPrice = el.currencyVal
+
+
+          }
+          if (el.code == 'EUR') {
+
+            this.toCountery = el.code;
+            this.AskPrice = el.currencyVal
+            this.baseRate = el.currencyVal
+
+          }
+
 
         }));
 
 
       }
     )
- 
+
 
   }
 
