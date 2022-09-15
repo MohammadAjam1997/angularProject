@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { ConfigerService } from '../shared/services/configer.service'; 
 import { NgxImgZoomService } from "ngx-img-zoom";
 import { CurrencyStateService } from './currency-state.service';
 import { Observable } from 'rxjs';

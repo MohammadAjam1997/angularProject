@@ -335,12 +335,12 @@
       :src="{{flagA}}"
     /> </button>
 <mat-menu  #menu1="matMenu">
-  <button mat-menu-item (click)="setImageFlag(lang.filePreviewPath,lang.code)"  *ngFor="let lang of ArrayOfLanguage" [value]="lang.code" >{{lang.name}} <img
+  <button mat-menu-item (click)="setImageFlag(lang.filePreviewPath,lang.code)"  *ngFor="let lang of ArrayOfLanguage" [value]="lang.code" > <img
     width="29" 
     height="20"
     alt="Angular Logo"
     :src="{{lang.filePreviewPath}}"
-  /></button>
+  /> {{lang.name}}</button>
   
 </mat-menu>
 <div class="ps-3 disableComponent">
@@ -354,7 +354,7 @@
 </mat-menu></div>
 </div>
  <div class=" disableComponent paddingForRerturn ">
-  <p ><small class="text-white ">{{ 'HOME.Return' | translate }}</small></p>
+  <p ><small class="text-white paddingForRerturnRight">{{ 'HOME.Return' | translate }}</small></p>
   <div class="d-flex pe-2 ">
 <p>{{ 'HOME.Orders' | translate }}</p></div>
 </div>

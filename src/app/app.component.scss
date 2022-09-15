@@ -32,6 +32,9 @@
 }
 
   :host(.active) {
+    .paddingForRerturnRight{
+     padding-right: 9px;
+    }
     .paddingForRerturn{
       padding-left: $sample;
      padding-bottom: 10px;
