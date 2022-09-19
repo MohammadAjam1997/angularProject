@@ -1,0 +1,72 @@
+// @import url('./app.component.ts');
+@media only screen and (min-width:576px) {
+.sizeOFInput{
+    width: 59% !important;
+    
+}
+
+.disableComponentOnSmall{
+    display: none;
+    }
+.icon-display {
+    transform: scale(1.5);
+ }
+}
+ @media only screen and (max-width: 576px) {
+     .sizeandpositionOFIMG{
+      margin: 10px 30px 0px -15px !important;
+
+     }
+     .iconSize{
+      scale: 1.5 !important;
+    }
+    .sizeOFInput{
+     display: none;       
+    }
+    .disableComponent{
+     display: none;       
+    }
+    .disableComponentOnSmall{
+    display: block;
+    }
+  }
+  .directionRTL{
+    direction: ltr;
+  }
+  $sample: 20px;
+.paddingForRerturn{
+  padding-right: $sample;
+}
+
+  :host(.active) {
+    .paddingForRerturnRight{
+     padding-right: 9px;
+    }
+    .paddingForRerturn{
+      padding-left: $sample;
+     padding-bottom: 10px;
+     padding-right: 0px;
+    }
+    
+    .textDetails span{
+      font-family: inherit;
+      font-size: 18px;
+    }
+    .welcomeText{
+      padding-right: 25px;
+    }
+    .BorderRadiusInArabicMood{
+      border-radius:10px 0px 0px 10px !important;
+    
+    }
+    .BorderRadiusInArabicMoodForAll{
+      border-radius:0px 5px 5px 0px !important;
+
+    }
+    .directionRTL{
+      direction: rtl;
+      // margin: $sample;
+    }
+  }
+
+  

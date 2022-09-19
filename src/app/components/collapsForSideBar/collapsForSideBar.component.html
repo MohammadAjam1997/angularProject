@@ -1,0 +1,21 @@
+<mat-drawer-container class="example-container" autosize>
+  <div class="d-flex">
+    <div class="d-flex flex-column gy-5">
+
+      <button *ngFor="let x of ArrayFiller2" class="showFillerAction" type="button" mat-button
+        (click)="showFillerAction()">
+        {{x}}<mat-icon>keyboard_arrow_right</mat-icon>
+
+      </button>
+
+    </div>
+    <div *ngIf="showFiller" style="width: 100%;" class="ps-5">
+      <div class="row">
+        <div *ngFor="let x of ArrayFiller2;let indexOfelement=index;" class="col-4"><span
+            *ngIf="indexOfelement<2">Title{{indexOfelement}}</span></div>
+
+
+      </div>
+    </div>
+  </div>
+</mat-drawer-container>

@@ -1,0 +1,24 @@
+table {
+    width:
+        55%;
+    margin: auto;
+
+}
+.buttonAdd {
+
+    margin: auto;
+   
+}
+.divOfButtons{
+    margin: auto;
+    height: 45px;
+    width: 55%;
+    
+}
+@media screen and (max-width: 576px) {
+    .divOfButtons{
+        margin: auto;
+        height: 45px;
+        width: 100%;
+    }
+}

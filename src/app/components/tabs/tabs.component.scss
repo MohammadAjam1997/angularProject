@@ -1,0 +1,13 @@
+.directionRTL{
+    direction: rtl;
+  }
+
+
+  $sample: 100px;
+  :host:not(.active) {
+
+    .directionRTL{
+      direction: ltr;
+    //   margin: $sample;
+    }
+  }
