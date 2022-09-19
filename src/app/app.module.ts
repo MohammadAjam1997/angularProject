@@ -16,12 +16,16 @@ import { HeadersInterceptor } from '../assets/helper/headers.interceptor';
 import { DialogWithEditComponent } from './components/table/dialog-with-edit/dialog-with-edit.component';
 import { DialogEditComponent } from './components/table/dialog-edit/dialog-edit.component';
 import { DialogForDeletedAllComponent } from './components/table/dialog-for-deleted-all/dialog-for-deleted-all.component';
+import { CollapsForSideBarComponent } from './components/collapsForSideBar/collapsForSideBar.component';
+import { HeaderComponent } from './components/header/header.component';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
 @NgModule({
   declarations: [
+    CollapsForSideBarComponent,HeaderComponent,
     AppComponent,
     TabsComponent,
     DialogWithEditComponent,
