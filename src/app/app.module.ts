@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { NgxImgZoomModule } from "ngx-img-zoom";
 
 import { getBaseUrl } from "./shared/services/config";
@@ -18,6 +17,8 @@ import { DialogEditComponent } from './components/table/dialog-edit/dialog-edit.
 import { DialogForDeletedAllComponent } from './components/table/dialog-for-deleted-all/dialog-for-deleted-all.component';
 import { CollapsForSideBarComponent } from './components/collapsForSideBar/collapsForSideBar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ImageZoomComponent } from './components/imageZoom/imageZoom.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -25,7 +26,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    CollapsForSideBarComponent,HeaderComponent,
+    CollapsForSideBarComponent,HeaderComponent,ImageZoomComponent,
     AppComponent,
     TabsComponent,
     DialogWithEditComponent,
@@ -33,7 +34,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     DialogForDeletedAllComponent,
   ],
   imports: [
-    SharedModule,NgxImageZoomModule,NgxImgZoomModule,
+    SharedModule,NgxImgZoomModule,ImageCropperModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -74,7 +74,7 @@ export class CurrencyComponent implements OnInit {
 
     this.configSer.getcurrencyWithID(3).subscribe(
       (res: any) => {
-        console.log(res.map((el: any) => {
+        res.map((el: any) => {
           if (el.code == 'USD') {
             this.Country = el.code
             this.BidPrice = el.currencyVal
@@ -90,7 +90,8 @@ export class CurrencyComponent implements OnInit {
           }
 
 
-        }));
+        })
+      
 
 
       }

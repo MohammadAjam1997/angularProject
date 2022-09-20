@@ -404,7 +404,7 @@
   <mat-drawer-container class="example-container" autosize>
 
   <mat-drawer #drawerForSideBar  class="example-sidenav "  >
-<app-collapsForSideBar></app-collapsForSideBar>
+<app-collapsForSideBar (newItemEvent)="drawerForSideBar.toggle()"></app-collapsForSideBar>
    
     </mat-drawer>
     
@@ -433,3 +433,4 @@
 
 <router-outlet></router-outlet>
 </mat-drawer-container>
+<app-imageZoom></app-imageZoom>

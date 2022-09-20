@@ -21,7 +21,11 @@ export class AppComponent {
   numberOfitems: number = 0
 
   @HostBinding('class') css?: string = undefined;
+  items = ['item1', 'item2', 'item3', 'item4'];
 
+  addItem(newItem: string) {
+    this.items.push(newItem);
+  }
   AddTOCart() {
     this.numberOfitems = this.numberOfitems + 1
   }
@@ -65,7 +69,6 @@ export class AppComponent {
   }
   getArrayOfLanguage() {
     this.ArrayOfLanguage.map((el: any) => {
-      console.log(el.name);
       return el.name
     })
   }

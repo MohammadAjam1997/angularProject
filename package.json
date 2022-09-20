@@ -28,6 +28,7 @@
     "bootstrap-icons": "^1.9.1",
     "flag-icon-css": "^4.1.7",
     "mdb-ui-kit": "^5.0.0",
+    "ngx-image-cropper": "^6.2.2",
     "ngx-image-zoom": "^1.0.1",
     "ngx-img-zoom": "^4.1.2",
     "ngx-pagination": "^6.0.2",
